@@ -8,6 +8,8 @@
 
 using namespace std;
 
+
+
 namespace Engine
 {
     class Game
@@ -25,6 +27,4 @@ namespace Engine
         Ness::Renderer*             renderer();
     };
 }
-
-
 
