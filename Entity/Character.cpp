@@ -10,7 +10,7 @@ Character::Character()
     m_type = "character";
 }
 
-void Character::add_character(Game *game, StatePtr state)
+void Character::add_character(Game &game, StatePtr state)
 {
     m_scene = state->znode();
     m_sprite = m_scene->create_animated_sprite(m_spritesheet);

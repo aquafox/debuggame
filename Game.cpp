@@ -5,8 +5,6 @@
 using namespace std;
 using namespace Engine;
 
-Game* Game::s_instance = 0;
-
 bool Game::init()
 {
     return true; //Successful init

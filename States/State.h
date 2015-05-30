@@ -22,7 +22,7 @@ namespace Engine
         // Called during Game::update()
         virtual void                update() = 0;
         // Called during Game::push_state()
-        virtual void                on_start(Game* current_game) = 0;
+        virtual void                on_start(Game& current_game) = 0;
         // Called during Game::pop_state()
         virtual void                on_exit() = 0;
 
@@ -35,20 +35,20 @@ namespace Engine
     {
     public:
         void                        update();
-        void                        on_start(Game* current_game);
+        void                        on_start(Game& current_game);
         void                        on_exit();
     };
 
     class LoadState : public IGameState
     {
         void                        update();
-        void                        on_start(Game* current_game);
+        void                        on_start(Game& current_game);
         void                        on_exit();
     };
     class SaveState : public IGameState
     {
         void                        update();
-        void                        on_start(Game* current_game);
+        void                        on_start(Game& current_game);
         void                        on_exit();
     };
 
@@ -59,7 +59,7 @@ namespace Engine
         friend class SaveState;
 
         void                        update();
-        void                        on_start(Game* current_game);
+        void                        on_start(Game& current_game);
         void                        on_exit();
     };
 

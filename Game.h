@@ -15,12 +15,10 @@ namespace Engine
     {
         Ness::Renderer              g_renderer;
         vector<StatePtr>            m_statestack;
-        //Singleton
-        static Game*                s_instance;
         Game();
 
     public:
-        static Game*                instance() {if(!s_instance) s_instance = new Game; return s_instance;}
+        static Game&                instance() {static Game instance; return instance;}
         ~Game();
         bool                        init();
         void                        update();

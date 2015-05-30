@@ -5,13 +5,13 @@ using namespace Engine;
 using namespace std;
 
 void IGameState::update() {}
-void IGameState::on_start(Game* current_game) {}
+void IGameState::on_start(Game& current_game) {}
 void IGameState::on_exit() {}
 
-void LocalMapState::on_start(Game* current_game)
+void LocalMapState::on_start(Game& current_game)
 {
     // Set the initial scene
-    m_scene = current_game->renderer()->create_scene();
+    m_scene = current_game.renderer()->create_scene();
     m_zscene = m_scene->create_znode();
 
     // Create a background

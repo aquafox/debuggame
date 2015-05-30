@@ -31,7 +31,7 @@ namespace Engine
     public:
         Character();
         ~Character();
-        void                        add_character(Game *game, StatePtr state);
+        void                        add_character(Game &game, StatePtr state);
         void                        set_spritesheet(string sheet_file);
         void                        update();
     };

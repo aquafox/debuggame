@@ -14,10 +14,10 @@ int main(int argc, char** argv)
     //Must start with this
     Ness::init();
 
-    Engine::Game::instance()->init();
+    Engine::Game::instance().init();
     Engine::StatePtr teststate(new Engine::LocalMapState);
     teststate->on_start(Engine::Game::instance());
-    Engine::Game::instance()->push_state(teststate);
+    Engine::Game::instance().push_state(teststate);
     Engine::Character charlie;
     charlie.set_spritesheet("resources/gfx/chars/char001.png");
     charlie.add_character(Engine::Game::instance(),teststate);
@@ -29,6 +29,6 @@ int main(int argc, char** argv)
     while( !app.got_quit() )
     {
         EventsPoller.poll_events();
-        Engine::Game::instance()->update();
+        Engine::Game::instance().update();
     }
 }
