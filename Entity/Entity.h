@@ -6,7 +6,7 @@ using namespace std;
 
 namespace Engine
 {
-    class bEntity
+    class IEntity
     {
     protected:
         unsigned int    m_gid;      //Unique game ID
@@ -17,5 +17,6 @@ namespace Engine
         unsigned int    get_gid();
         string          get_type();
         string          get_id();
+        virtual void    update()=0;
     };
 }

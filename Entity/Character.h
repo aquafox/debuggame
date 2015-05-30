@@ -15,7 +15,7 @@ namespace Engine
         DYING
     };
 
-    class Character : public bEntity
+    class Character : public IEntity
     {
     protected:
         // Graphics
@@ -33,5 +33,6 @@ namespace Engine
         ~Character();
         void                        add_character(Game *game, StatePtr state);
         void                        set_spritesheet(string sheet_file);
+        void                        update();
     };
 }

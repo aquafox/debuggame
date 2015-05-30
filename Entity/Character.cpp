@@ -7,7 +7,7 @@ using namespace Engine;
 
 Character::Character()
 {
-    m_type = "char";
+    m_type = "character";
 }
 
 void Character::add_character(Game *game, StatePtr state)
@@ -31,3 +31,5 @@ Character::~Character()
 {
 
 }
+
+void Character::update() {}
