@@ -1,8 +1,7 @@
 #pragma once
 
-#include "States/State.h"
-
 #include "NessEngine/NessEngine.h"
+#include "States/State.h"
 #include <vector>
 #include <string>
 
@@ -25,6 +24,7 @@ namespace Engine
         void                        push_state(StatePtr state);
         void                        pop_state();
         Ness::Renderer*             renderer();
+        StatePtr                    top_state();
     };
 }
 

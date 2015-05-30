@@ -1,4 +1,5 @@
 #include "State.h"
+#include "../Game.h"
 
 using namespace Engine;
 using namespace std;
@@ -14,7 +15,7 @@ void LocalMapState::on_start(Game* current_game)
     m_zscene = m_scene->create_znode();
 
     // Create a background
-    create_image("resources/gfx/bg.png", this);
+    create_image("resources/gfx/bg.png",this);
 
 }
 
@@ -25,4 +26,9 @@ void create_image(string img_file, IGameState* gamestate)
     gamestate->add_sprite(image);
 }
 
-void LocalMapState::update() {}
+void LocalMapState::update()
+{
+    m_scene->render();
+}
+
+void LocalMapState::on_exit() {}

@@ -10,10 +10,10 @@ Character::Character()
     m_type = "char";
 }
 
-void Character::add_character(Game *current_game)
+void Character::add_character(Game *game, StatePtr state)
 {
-//    m_scene = current_game->get_zscene();
-    m_sprite = (*m_scene)->create_animated_sprite(m_spritesheet);
+    m_scene = state->znode();
+    m_sprite = m_scene->create_animated_sprite(m_spritesheet);
     m_sprite->set_source_from_sprite_sheet(Ness::Pointi(0,0),Ness::Sizei(3,4));
     m_sprite->set_blend_mode(Ness::BLEND_MODE_BLEND);
     //m_sprite->set_scale(1.0f);

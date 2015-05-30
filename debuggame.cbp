@@ -170,6 +170,8 @@
 		<Unit filename="NessEngine/utils/events/mouse.h" />
 		<Unit filename="NessEngine/utils/rendering/logo_show.cpp" />
 		<Unit filename="NessEngine/utils/rendering/logo_show.h" />
+		<Unit filename="States/State.cpp" />
+		<Unit filename="States/State.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

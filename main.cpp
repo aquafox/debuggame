@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Entity/Entity.h"
 #include "Entity/Character.h"
+#include "States/State.h"
 
 using namespace std;
 
@@ -14,11 +15,13 @@ int main(int argc, char** argv)
     Ness::init();
 
     Engine::Game mygame;
-    if(mygame.init())
-        cout << "Init success." << endl;
+    mygame.init();
+    Engine::StatePtr teststate(new Engine::LocalMapState);
+    teststate->on_start(&mygame);
+    mygame.push_state(teststate);
     Engine::Character charlie;
-/*    charlie.set_spritesheet("resources/gfx/chars/char001.png");
-    charlie.add_character(&mygame); */
+    charlie.set_spritesheet("resources/gfx/chars/char001.png");
+    charlie.add_character(&mygame,teststate);
 
     Ness::Utils::EventsPoller EventsPoller;
     Ness::Utils::ApplicationEvents app;

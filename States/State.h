@@ -1,8 +1,7 @@
 #pragma once
 
 #include "../NessEngine/NessEngine.h"
-#include "../Game.h"
-
+#include <vector>
 #include <memory>
 
 using namespace std;
@@ -11,6 +10,7 @@ namespace Engine
 {
     // Abstract base class for game states.
     // States are to be added to the stack Game::m_statestack.
+    class Game;
     class IGameState
     {
     protected:

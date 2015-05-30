@@ -7,10 +7,6 @@ using namespace Engine;
 
 bool Game::init()
 {
-    StatePtr teststate(new LocalMapState);
-    teststate->on_start(this);
-    m_statestack.push_back(teststate);
-
     return true; //Successful init
 
 }
@@ -30,12 +26,17 @@ void Game::update()
 
         g_renderer.start_frame();
         // Here be dragons.
-        StatePtr topstate = *(m_statestack.end());
+        StatePtr topstate = *(m_statestack.end()-1);
         topstate->update();
         g_renderer.end_frame();
 }
 
 
 Game::~Game() {}
+
+void Game::push_state(StatePtr state)
+{
+    m_statestack.push_back(state);
+}
 
 
