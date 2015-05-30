@@ -3,16 +3,5 @@
 
 using namespace Engine;
 
-unsigned int    IEntity::get_gid()
-{
-    return m_gid;
-}
+unsigned int IEntity::next_gid=0;
 
-string          IEntity::get_type()
-{
-    return m_type;
-}
-string          IEntity::get_id()
-{
-    return m_id;
-}

@@ -10,9 +10,9 @@ Character::Character()
     m_type = "character";
 }
 
-void Character::add_character(Game &game, StatePtr state)
+void Character::add_character()
 {
-    m_scene = state->znode();
+    m_scene = m_state->znode();
     m_sprite = m_scene->create_animated_sprite(m_spritesheet);
     m_sprite->set_source_from_sprite_sheet(Ness::Pointi(0,0),Ness::Sizei(3,4));
     m_sprite->set_blend_mode(Ness::BLEND_MODE_BLEND);
@@ -22,14 +22,21 @@ void Character::add_character(Game &game, StatePtr state)
 
 }
 
-void Character::set_spritesheet(string sheet_file)
-{
-    m_spritesheet = sheet_file;
-}
-
 Character::~Character()
 {
 
 }
 
 void Character::update() {}
+
+void Character::on_start(StatePtr state)
+{
+    m_spritesheet = "resources/gfx/chars/char001.png";
+    m_state = state;
+    add_character();
+}
+
+void Character::on_exit()
+{
+
+}

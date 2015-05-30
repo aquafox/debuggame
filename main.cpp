@@ -19,8 +19,7 @@ int main(int argc, char** argv)
     teststate->on_start(Engine::Game::instance());
     Engine::Game::instance().push_state(teststate);
     Engine::Character charlie;
-    charlie.set_spritesheet("resources/gfx/chars/char001.png");
-    charlie.add_character(Engine::Game::instance(),teststate);
+    charlie.on_start(teststate);
 
     Ness::Utils::EventsPoller EventsPoller;
     Ness::Utils::ApplicationEvents app;
