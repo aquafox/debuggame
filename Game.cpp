@@ -11,7 +11,8 @@ bool Game::init()
 
 }
 
-Game::Game() :  g_renderer("Debug RPG", Ness::Sizei(800,600))
+
+Game::Game() : g_renderer("Debug RPG", Ness::Sizei(800,600))
 {
 }
 
@@ -40,3 +41,7 @@ void Game::push_state(StatePtr state)
 }
 
 
+void Game::add_map(Map& map)
+{
+    m_map = map;
+}

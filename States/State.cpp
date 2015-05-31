@@ -5,17 +5,24 @@ using namespace Engine;
 using namespace std;
 
 void IGameState::update() {}
-void IGameState::on_start(Game& current_game) {}
+void IGameState::on_start() {}
 void IGameState::on_exit() {}
 
-void LocalMapState::on_start(Game& current_game)
+void LocalMapState::on_start()
 {
     // Set the initial scene
-    m_scene = current_game.renderer()->create_scene();
+    m_scene = Game::instance().renderer()->create_scene();
     m_zscene = m_scene->create_znode();
 
     // Create a background
     create_image("resources/gfx/bg.png",this);
+    Map gMap;
+    StatePtr thisone(this);
+    gMap.on_start(thisone);
+    Game::instance().add_map(gMap);
+
+
+
 
 }
 

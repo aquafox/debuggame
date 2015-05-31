@@ -38,6 +38,8 @@
 		<Unit filename="Entity/Character.h" />
 		<Unit filename="Entity/Entity.cpp" />
 		<Unit filename="Entity/Entity.h" />
+		<Unit filename="Entity/Map.cpp" />
+		<Unit filename="Entity/Map.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="NessEngine/NessEngine.cpp" />

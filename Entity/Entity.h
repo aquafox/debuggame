@@ -10,11 +10,11 @@ namespace Engine
     class IEntity
     {
     protected:
-        unsigned int        m_gid;      //Unique GlobalID
-        string              m_id;       //Name of the entity
-        string              m_type;     //Type of entity eg "character"
+        unsigned short          m_gid;      //Unique GlobalID
+        string                  m_id;       //Name of the entity
+        string                  m_type;     //Type of entity eg "character"
 
-        static unsigned int next_gid;
+        static unsigned short   next_gid;
 
     public:
         IEntity(){next_gid++; m_gid=next_gid;}

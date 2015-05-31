@@ -3,5 +3,5 @@
 
 using namespace Engine;
 
-unsigned int IEntity::next_gid=0;
+unsigned short IEntity::next_gid=0;
 

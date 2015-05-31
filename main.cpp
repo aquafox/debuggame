@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 
     Engine::Game::instance().init();
     Engine::StatePtr teststate(new Engine::LocalMapState);
-    teststate->on_start(Engine::Game::instance());
+    teststate->on_start();
     Engine::Game::instance().push_state(teststate);
     Engine::Character charlie;
     charlie.on_start(teststate);

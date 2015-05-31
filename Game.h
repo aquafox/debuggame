@@ -2,6 +2,7 @@
 
 #include "NessEngine/NessEngine.h"
 #include "States/State.h"
+#include "Entity/Map.h"
 #include <vector>
 #include <string>
 
@@ -13,9 +14,11 @@ namespace Engine
 {
     class Game
     {
+        Game();
         Ness::Renderer              g_renderer;
         vector<StatePtr>            m_statestack;
-        Game();
+        Map                         m_map;
+
 
     public:
         static Game&                instance() {static Game instance; return instance;}
@@ -26,6 +29,7 @@ namespace Engine
         void                        pop_state();
         Ness::Renderer*             renderer();
         StatePtr                    top_state();
+        void                        add_map(Map& map);
     };
 }
 
