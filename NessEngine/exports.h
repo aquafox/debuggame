@@ -19,7 +19,7 @@
   ronenness@gmail.com
 
 */
-#define NESSENGINE_STATIC
+
 #ifndef EXPORT_DEF_H_
 #define EXPORT_DEF_H_
 
@@ -43,11 +43,14 @@
 #else
 
 #if defined(__GNUC__) && __GNUC__ >= 4
-#  define NESSENGINE_API __attribute__ ((visibility("default")))
+#ifdef NESSENGINE_EXPORTS
+#define NESSENGINE_API __attribute__ ((visibility("default")))
+#elif defined(NESSENGINE_STATIC)
+#define NESSENGINE_API
 #else
-#  define NESSENGINE_API
+#define NESSENGINE_API
 #endif
 #endif
-
+#endif
 
 #endif
