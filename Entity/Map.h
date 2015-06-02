@@ -3,6 +3,7 @@
 #include "../States/State.h"
 #include "../NessEngine/NessEngine.h"
 #include "Entity.h"
+#include "tmxparser/Tmx.h"
 
 
 // IsoTileMap implementation and the pointer definition and stuff
@@ -42,6 +43,7 @@ namespace Ness
 
 namespace Engine
 {
+    typedef shared_ptr<Tmx::Map> TmxMapPtr;
     /*
     class Tile : public IEntity
     {
@@ -64,6 +66,7 @@ namespace Engine
 
     public:
         Map();
+        Map(string tmxfile);
         void                        on_start(StatePtr state);
         void                        on_exit();
         void                        update();
