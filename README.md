@@ -11,8 +11,8 @@ Maps are made using [Tiled](http://www.mapeditor.org/). Support for tmx is being
 ## Dependencies
 ### Local Dependencies
 These are external projects hosted within this git.
-- [Ness-Engine](http://ness-engine.com) (Folder: NessEngine/)
-- [tmxparser](https://github.com/andrewrk/tmxparser) (Folder: Entity/tmxparser/)
+- [Ness-Engine](http://ness-engine.com) (Folder: src/NessEngine/)
+- [tmxparser](https://github.com/andrewrk/tmxparser) (Folder: src/Entity/tmxparser/)
 
 ### External Dependencies
 These are required to compile but not hosted in this git.

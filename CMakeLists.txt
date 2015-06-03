@@ -14,8 +14,8 @@ set (VERSION "${VERSION_MAJOR}.${VERSION_MINOR}")
 #  )
 
 # source files
-file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/*.cpp ${PROJECT_SOURCE_DIR}/*.c)
-file(GLOB_RECURSE HEADERS ${PROJECT_SOURCE_DIR}/*.h)
+file(GLOB_RECURSE SOURCES ${PROJECT_SOURCE_DIR}/src/*.cpp ${PROJECT_SOURCE_DIR}/src/*.c)
+file(GLOB_RECURSE HEADERS ${PROJECT_SOURCE_DIR}/src/*.h)
 
 
 # This project uses smart pointers, sdl needs a macro, tmxparser uses miniz instead of zlib, compile Ness-Engine statically.
