@@ -33,7 +33,15 @@ void Game::update()
 }
 
 
-Game::~Game() {}
+Game::~Game()
+{
+    // Reset map
+    m_map.reset();
+    for(auto it = m_statestack.begin(); it != m_statestack.end(); it++)
+    {
+        it->reset();
+    }
+}
 
 void Game::push_state(StatePtr state)
 {
@@ -41,7 +49,7 @@ void Game::push_state(StatePtr state)
 }
 
 
-void Game::add_map(Map& map)
+void Game::add_map(MapPtr map)
 {
     m_map = map;
 }

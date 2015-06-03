@@ -17,7 +17,7 @@ namespace Engine
         Game();
         Ness::Renderer              g_renderer;
         vector<StatePtr>            m_statestack;
-        Map                         m_map;
+        MapPtr                      m_map;
 
 
     public:
@@ -29,7 +29,7 @@ namespace Engine
         void                        pop_state();
         Ness::Renderer*             renderer();
         StatePtr                    top_state();
-        void                        add_map(Map& map);
+        void                        add_map(MapPtr map);
     };
 }
 

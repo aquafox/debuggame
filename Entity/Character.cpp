@@ -22,10 +22,6 @@ void Character::add_character()
 
 }
 
-Character::~Character()
-{
-
-}
 
 void Character::update() {}
 
@@ -38,5 +34,13 @@ void Character::on_start(StatePtr state)
 
 void Character::on_exit()
 {
+
+}
+
+Character::~Character()
+{
+    m_state.reset();
+    m_scene.reset();
+    m_sprite.reset();
 
 }

@@ -30,9 +30,12 @@
 		</Build>
 		<Compiler>
 			<Add option="-std=c++11" />
+			<Add option="-DNESSENGINE_STATIC" />
+			<Add option="-DUSE_MINIZ" />
+			<Add option="-DSDL_MAIN_HANDLED" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf" />
+			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -ltinyxml2" />
 		</Linker>
 		<Unit filename="Entity/Character.cpp" />
 		<Unit filename="Entity/Character.h" />
@@ -40,6 +43,48 @@
 		<Unit filename="Entity/Entity.h" />
 		<Unit filename="Entity/Map.cpp" />
 		<Unit filename="Entity/Map.h" />
+		<Unit filename="Entity/tmxparser/Tmx.h" />
+		<Unit filename="Entity/tmxparser/TmxEllipse.cpp" />
+		<Unit filename="Entity/tmxparser/TmxEllipse.h" />
+		<Unit filename="Entity/tmxparser/TmxImage.cpp" />
+		<Unit filename="Entity/tmxparser/TmxImage.h" />
+		<Unit filename="Entity/tmxparser/TmxImageLayer.cpp" />
+		<Unit filename="Entity/tmxparser/TmxImageLayer.h" />
+		<Unit filename="Entity/tmxparser/TmxLayer.cpp" />
+		<Unit filename="Entity/tmxparser/TmxLayer.h" />
+		<Unit filename="Entity/tmxparser/TmxMap.cpp" />
+		<Unit filename="Entity/tmxparser/TmxMap.h" />
+		<Unit filename="Entity/tmxparser/TmxMapTile.h" />
+		<Unit filename="Entity/tmxparser/TmxObject.cpp" />
+		<Unit filename="Entity/tmxparser/TmxObject.h" />
+		<Unit filename="Entity/tmxparser/TmxObjectGroup.cpp" />
+		<Unit filename="Entity/tmxparser/TmxObjectGroup.h" />
+		<Unit filename="Entity/tmxparser/TmxPoint.h" />
+		<Unit filename="Entity/tmxparser/TmxPolygon.cpp" />
+		<Unit filename="Entity/tmxparser/TmxPolygon.h" />
+		<Unit filename="Entity/tmxparser/TmxPolyline.cpp" />
+		<Unit filename="Entity/tmxparser/TmxPolyline.h" />
+		<Unit filename="Entity/tmxparser/TmxPropertySet.cpp" />
+		<Unit filename="Entity/tmxparser/TmxPropertySet.h" />
+		<Unit filename="Entity/tmxparser/TmxTerrain.cpp" />
+		<Unit filename="Entity/tmxparser/TmxTerrain.h" />
+		<Unit filename="Entity/tmxparser/TmxTerrainArray.cpp" />
+		<Unit filename="Entity/tmxparser/TmxTerrainArray.h" />
+		<Unit filename="Entity/tmxparser/TmxTile.cpp" />
+		<Unit filename="Entity/tmxparser/TmxTile.h" />
+		<Unit filename="Entity/tmxparser/TmxTileLayer.cpp" />
+		<Unit filename="Entity/tmxparser/TmxTileLayer.h" />
+		<Unit filename="Entity/tmxparser/TmxTileOffset.cpp" />
+		<Unit filename="Entity/tmxparser/TmxTileOffset.h" />
+		<Unit filename="Entity/tmxparser/TmxTileset.cpp" />
+		<Unit filename="Entity/tmxparser/TmxTileset.h" />
+		<Unit filename="Entity/tmxparser/TmxUtil.cpp" />
+		<Unit filename="Entity/tmxparser/TmxUtil.h" />
+		<Unit filename="Entity/tmxparser/base64/base64.cpp" />
+		<Unit filename="Entity/tmxparser/base64/base64.h" />
+		<Unit filename="Entity/tmxparser/miniz.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="NessEngine/NessEngine.cpp" />

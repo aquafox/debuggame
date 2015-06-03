@@ -16,9 +16,10 @@ void LocalMapState::on_start()
 
     // Create a background
     create_image("resources/gfx/bg.png",this);
-    Map gMap;
+    MapPtr gMap(new Map);
+    // Map gMap("resources/maps/map.tmx");
     StatePtr thisone(this);
-    gMap.on_start(thisone);
+    gMap->on_start(thisone);
     Game::instance().add_map(gMap);
 
 

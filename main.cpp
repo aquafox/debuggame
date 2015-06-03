@@ -30,4 +30,6 @@ int main(int argc, char** argv)
         EventsPoller.poll_events();
         Engine::Game::instance().update();
     }
+
+    return 0;
 }
