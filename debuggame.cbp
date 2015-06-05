@@ -35,7 +35,7 @@
 			<Add option="-DSDL_MAIN_HANDLED" />
 		</Compiler>
 		<Linker>
-			<Add option="-lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -ltinyxml2" />
+			<Add option="-static-libgcc -static-libstdc++ -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -ltinyxml2" />
 		</Linker>
 		<Unit filename="src/Entity/Character.cpp" />
 		<Unit filename="src/Entity/Character.h" />
