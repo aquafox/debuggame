@@ -1,4 +1,4 @@
-# Debug
+# Debug [![Build Status](https://travis-ci.org/aquafox/debuggame.svg)](https://travis-ci.org/aquafox/debuggame)
 RPG game with deck building mechanics!
 
 ## Technical Overview
