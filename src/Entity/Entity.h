@@ -22,7 +22,7 @@ namespace Engine
         string          get_type() {return m_type;}
         string          get_id() {return m_id;}
 
-        virtual void    on_start(StatePtr state)=0;
+        virtual void    on_start(const StatePtr& state)=0;
         virtual void    on_exit()=0;
         virtual void    update()=0;
     };

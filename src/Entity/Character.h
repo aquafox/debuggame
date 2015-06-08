@@ -35,7 +35,7 @@ namespace Engine
         ~Character();
         void                        add_character();
         void                        update();
-        void                        on_start(StatePtr state);
+        void                        on_start(const StatePtr& state);
         void                        on_exit();
     };
 }

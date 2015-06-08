@@ -25,7 +25,7 @@ void Character::add_character()
 
 void Character::update() {}
 
-void Character::on_start(StatePtr state)
+void Character::on_start(const StatePtr& state)
 {
     m_spritesheet = "resources/gfx/chars/char001.png";
     m_state = state;

@@ -68,7 +68,7 @@ namespace Engine
     public:
         Map();
         Map(string tmxfile);
-        void                        on_start(StatePtr state);
+        void                        on_start(const StatePtr& state);
         void                        on_exit();
         void                        update();
 

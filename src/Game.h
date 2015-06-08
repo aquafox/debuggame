@@ -25,11 +25,11 @@ namespace Engine
         ~Game();
         bool                        init();
         void                        update();
-        void                        push_state(StatePtr state);
+        void                        push_state(const StatePtr& state);
         void                        pop_state();
         Ness::Renderer*             renderer();
         StatePtr                    top_state();
-        void                        add_map(MapPtr map);
+        void                        add_map(const MapPtr& map);
     };
 }
 

@@ -9,8 +9,8 @@ Map::Map(string tmxfile)
 {
     m_type="map";
     // Load tmx file
-    TmxMapPtr tmxmap(new Tmx::Map);
-    m_tmx = tmxmap;
+    TmxMapPtr tmx = make_shared<Tmx::Map>();
+    m_tmx = tmx;
     m_tmx->ParseFile(tmxfile);
 
     // Error checking.
@@ -28,11 +28,11 @@ Map::Map(string tmxfile)
 
 }
 
-void Map::on_start(StatePtr state)
+void Map::on_start(const StatePtr& state)
 {
     m_state = state;
     Ness::Renderer* renderer = Game::instance().renderer();
-    Ness::IsoTileMapPtr map(new IsoTileMap(renderer, m_spritesheet, m_dimensions, m_tilesize));
+    Ness::IsoTileMapPtr map = make_shared<IsoTileMap>(renderer, m_spritesheet, m_dimensions, m_tilesize);
     m_state->znode()->add(map);
     map->set_all_tiles_type(Ness::Pointi(0, 0), m_sheetgrid);
 

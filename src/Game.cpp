@@ -43,13 +43,13 @@ Game::~Game()
     }
 }
 
-void Game::push_state(StatePtr state)
+void Game::push_state(const StatePtr& state)
 {
     m_statestack.push_back(state);
 }
 
 
-void Game::add_map(MapPtr map)
+void Game::add_map(const MapPtr& map)
 {
     m_map = map;
 }

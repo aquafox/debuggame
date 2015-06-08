@@ -28,7 +28,7 @@ namespace Engine
 
         // Just in case this needs to be more complicated
         Ness::ZNodePtr              znode() { return m_zscene; };
-        void                        add_sprite(Ness::SpritePtr sprite) {m_sprites.push_back(sprite);}
+        void                        add_sprite(const Ness::SpritePtr& sprite) {m_sprites.push_back(sprite);}
     };
 
     class MainMenuState : public IGameState
