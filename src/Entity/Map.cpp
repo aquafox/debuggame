@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "../Game.h"
+#include "../States/State.h"
 #include <iostream>
 
 using namespace std;
@@ -52,3 +53,6 @@ void Map::update()
 
 
 Map::Map(){m_type="map";}
+
+
+

@@ -1,4 +1,5 @@
 #include "State.h"
+#include "../Entity/Map.h"
 #include "../Game.h"
 
 using namespace Engine;
@@ -16,8 +17,7 @@ void LocalMapState::on_start()
 
     // Create a background
     create_image("resources/gfx/bg.png",this);
-    MapPtr map = make_shared<Map>();
-    MapPtr gMap = map;
+    auto gMap = create_map();
     // Map gMap("resources/maps/map.tmx");
     StatePtr thisone(this);
     gMap->on_start(thisone);
