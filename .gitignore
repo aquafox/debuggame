@@ -9,3 +9,6 @@ CMakeCache.txt
 /cmake_install.cmake
 /debuggame.exe
 /lib_finder.script
+/*.mk
+/.cmake_dirty
+/*.project

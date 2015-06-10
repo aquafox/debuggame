@@ -1,7 +1,10 @@
-#include "Map.h"
 #include "../Game.h"
+#include "Map.h"
+
 #include "../States/State.h"
+
 #include <iostream>
+#include <string>
 
 using namespace std;
 using namespace Engine;
@@ -54,5 +57,12 @@ void Map::update()
 
 Map::Map(){m_type="map";}
 
-
-
+const MapPtr& make_map(const string tmxfile)
+{
+    MapPtr creation;
+    if(tmxfile=="")
+        creation = make_shared<Map>();
+    else
+        creation = make_shared<Map>(tmxfile);
+    return creation;
+}

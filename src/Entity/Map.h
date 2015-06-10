@@ -76,6 +76,6 @@ namespace Engine
 
     typedef shared_ptr<Map>      MapPtr;
 
-    const MapPtr& create_map(string tmxfile="");
+    const MapPtr& make_map(const string tmxfile);
 }
 

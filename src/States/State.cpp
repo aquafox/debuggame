@@ -17,7 +17,7 @@ void LocalMapState::on_start()
 
     // Create a background
     create_image("resources/gfx/bg.png",this);
-    auto gMap = create_map();
+    auto gMap = make_map("");
     // Map gMap("resources/maps/map.tmx");
     StatePtr thisone(this);
     gMap->on_start(thisone);
