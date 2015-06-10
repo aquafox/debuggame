@@ -19,7 +19,7 @@ namespace Engine
     class Character : public IEntity
     {
     protected:
-        StatePtr                    m_state;
+        weak_ptr<IGameState>        m_state;
         // Graphics
         Ness::ZNodePtr              m_scene;
         Ness::AnimatedSpritePtr     m_sprite;

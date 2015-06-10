@@ -14,7 +14,6 @@ namespace Engine
     class IGameState
     {
     protected:
-        Game                       *m_game;
         Ness::ScenePtr              m_scene;
         Ness::ZNodePtr              m_zscene;
         vector<Ness::SpritePtr>     m_sprites;
