@@ -12,14 +12,14 @@ Character::Character()
 
 void Character::add_character()
 {
-    m_scene = m_state->znode();
+    m_scene = m_state.lock()->znode();
     m_sprite = m_scene->create_animated_sprite(m_spritesheet);
     m_sprite->set_source_from_sprite_sheet(Ness::Pointi(0,0),Ness::Sizei(3,4));
     m_sprite->set_blend_mode(Ness::BLEND_MODE_BLEND);
     //m_sprite->set_scale(1.0f);
     m_sprite->set_position(Ness::Point(100, 100));
     m_sprite->set_anchor(Ness::Point::HALF);
-
+    m_state.reset();
 }
 
 
