@@ -5,6 +5,10 @@
 using namespace Engine;
 using namespace std;
 
+//Forward declarations
+const MapPtr& make_map(const string tmxfile);
+
+
 void IGameState::update() {}
 void IGameState::on_start() {}
 void IGameState::on_exit() {}
