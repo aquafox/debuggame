@@ -1,13 +1,15 @@
 #pragma once
 
-#include <string>
 #include "../States/State.h"
+
+#include <string>
+#include <memory>
 
 using namespace std;
 
 namespace Engine
 {
-    class IEntity
+    class IEntity : public enable_shared_from_this<IEntity>
     {
     protected:
         unsigned short          m_gid;      //Unique GlobalID

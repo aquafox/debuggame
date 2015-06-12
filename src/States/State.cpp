@@ -17,7 +17,7 @@ void LocalMapState::on_start()
 
     auto gMap = make_map();
     // Map gMap("resources/maps/map.tmx");
-//    gMap->on_start(StatePtr(this));
+    gMap->on_start(shared_from_this());
 //    Game::instance().add_map(gMap);
 }
 

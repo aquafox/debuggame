@@ -15,7 +15,7 @@ namespace Engine
     //Forward declarations
     class Game;
 
-    class IGameState
+    class IGameState : public enable_shared_from_this<IGameState>
     {
     protected:
         Ness::ScenePtr              m_scene;
@@ -70,5 +70,3 @@ namespace Engine
     // Make code look cleaner
     typedef shared_ptr<IGameState> StatePtr;
 }
-
-void create_image(string img_file, Engine::IGameState* gamestate);
