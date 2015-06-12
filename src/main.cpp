@@ -11,15 +11,16 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    //Must start with this
+    //Graphics engine init
     Ness::init();
-
+    //Game init
     Engine::Game::instance().init();
-    Engine::StatePtr teststate(new Engine::LocalMapState);
-    teststate->on_start();
-    Engine::Game::instance().push_state(teststate);
+    
+    auto localmap = make_shared<Engine::LocalMapState>();
+    localmap->on_start();
+    Engine::Game::instance().push_state(localmap);
     Engine::Character charlie;
-    charlie.on_start(teststate);
+    charlie.on_start(localmap);
 
     Ness::Utils::EventsPoller EventsPoller;
     Ness::Utils::ApplicationEvents app;

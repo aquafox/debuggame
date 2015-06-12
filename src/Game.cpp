@@ -54,13 +54,3 @@ void Game::add_map(const MapPtr& map)
     m_map = map;
 }
 
-const MapPtr& create_map(string tmxfile = "")
-{
-    MapPtr m;
-    if (tmxfile == "")
-        m = make_shared<Map>();
-    else
-        m = make_shared<Map>(tmxfile);
-    return m;
-
-}

@@ -62,7 +62,6 @@ namespace Engine
         Ness::IsoTileMapPtr         m_tilemap;
         TmxMapPtr                   m_tmx;
 
-        StatePtr                    m_state;
         Ness::ZNodePtr              m_scene;
 
     public:
@@ -76,6 +75,6 @@ namespace Engine
 
     typedef shared_ptr<Map>      MapPtr;
 
-    const MapPtr& make_map(const string tmxfile);
+    MapPtr make_map(const string& tmxfile=string(""));
 }
 

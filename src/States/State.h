@@ -11,13 +11,15 @@ namespace Engine
 {
     // Abstract base class for game states.
     // States are to be added to the stack Game::m_statestack.
+    
+    //Forward declarations
     class Game;
+
     class IGameState
     {
     protected:
         Ness::ScenePtr              m_scene;
         Ness::ZNodePtr              m_zscene;
-        vector<Ness::SpritePtr>     m_sprites;
     public:
         // Called during Game::update()
         virtual void                update() = 0;
@@ -28,7 +30,6 @@ namespace Engine
 
         // Just in case this needs to be more complicated
         Ness::ZNodePtr              znode() { return m_zscene; };
-        void                        add_sprite(const Ness::SpritePtr& sprite) {m_sprites.push_back(sprite);}
     };
 
     class MainMenuState : public IGameState
@@ -41,12 +42,14 @@ namespace Engine
 
     class LoadState : public IGameState
     {
+    public:
         void                        update();
         void                        on_start();
         void                        on_exit();
     };
     class SaveState : public IGameState
     {
+    public:
         void                        update();
         void                        on_start();
         void                        on_exit();
@@ -57,7 +60,8 @@ namespace Engine
         // Provide the loading and saving processes access.
         friend class LoadState;
         friend class SaveState;
-
+        
+        public:
         void                        update();
         void                        on_start();
         void                        on_exit();
