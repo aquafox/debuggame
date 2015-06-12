@@ -1,9 +1,8 @@
 #pragma once
 
-#include "../States/State.h"
-#include "../NessEngine/NessEngine.h"
-#include "Entity.h"
+#include "../Game.h"
 #include "tmxparser/Tmx.h"
+
 typedef shared_ptr<Tmx::Map> TmxMapPtr;
 
 
@@ -66,6 +65,7 @@ namespace Engine
 
     public:
         Map();
+        ~Map(){on_exit();}
         Map(string tmxfile);
         void                        on_start(const StatePtr& state);
         void                        on_exit();
@@ -75,6 +75,6 @@ namespace Engine
 
     typedef shared_ptr<Map>      MapPtr;
 
-    MapPtr make_map(const string& tmxfile=string(""));
+    MapPtr create_map(const string& tmxfile=string(""));
 }
 

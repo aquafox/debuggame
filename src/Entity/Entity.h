@@ -19,14 +19,16 @@ namespace Engine
         static unsigned short   next_gid;
 
     public:
-        IEntity(){next_gid++; m_gid=next_gid;}
-        unsigned int    get_gid() {return m_gid;}
-        string          get_type() {return m_type;}
-        string          get_id() {return m_id;}
+        IEntity(){next_gid++; m_gid=next_gid;} //Automatically set GlobalID
+        virtual ~IEntity(){} //Destructors are defined by inherited
+        
+        const unsigned int  gid() {return m_gid;}
+        const string        type() {return m_type;}
+        const string        id() {return m_id;}
 
-        virtual void    on_start(const StatePtr& state)=0;
-        virtual void    on_exit()=0;
-        virtual void    update()=0;
+        virtual void        on_start(const StatePtr& state)=0;
+        virtual void        on_exit()=0;
+        virtual void        update()=0;
     };
 }
 

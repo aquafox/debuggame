@@ -5,7 +5,7 @@
 #include "Game.h"
 #include "Entity/Entity.h"
 #include "Entity/Character.h"
-#include "States/State.h"
+#include "States/LocalMap.h"
 
 using namespace std;
 
@@ -19,8 +19,6 @@ int main(int argc, char** argv)
     auto localmap = make_shared<Engine::LocalMapState>();
     localmap->on_start();
     Engine::Game::instance().push_state(localmap);
-    Engine::Character charlie;
-    charlie.on_start(localmap);
 
     Ness::Utils::EventsPoller EventsPoller;
     Ness::Utils::ApplicationEvents app;

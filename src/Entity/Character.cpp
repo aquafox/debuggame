@@ -1,8 +1,4 @@
-#include "../NessEngine/NessEngine.h"
 #include "Character.h"
-
-#include <string>
-#include <iostream>
 
 using namespace std;
 using namespace Engine;
@@ -42,11 +38,12 @@ void Character::on_start(const StatePtr& state)
 
 void Character::on_exit()
 {
-
-}
-
-Character::~Character()
-{
     m_scene.reset();
     m_sprite.reset();
+}
+
+CharPtr Engine::create_character()
+{
+    auto creation = make_shared<Character>();
+    return creation;
 }

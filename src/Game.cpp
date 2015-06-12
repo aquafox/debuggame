@@ -1,5 +1,5 @@
 #include "Game.h"
-#include "NessEngine/NessEngine.h"
+
 #include <memory>
 
 using namespace std;
@@ -35,8 +35,7 @@ void Game::update()
 
 Game::~Game()
 {
-    // Reset map
-    m_map.reset();
+    // Kill the game state pointers
     for(auto it = m_statestack.begin(); it != m_statestack.end(); it++)
     {
         it->reset();
@@ -47,10 +46,3 @@ void Game::push_state(const StatePtr& state)
 {
     m_statestack.push_back(state);
 }
-
-
-void Game::add_map(const MapPtr& map)
-{
-    m_map = map;
-}
-

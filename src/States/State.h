@@ -55,18 +55,6 @@ namespace Engine
         void                        on_exit();
     };
 
-    class LocalMapState : public IGameState
-    {
-        // Provide the loading and saving processes access.
-        friend class LoadState;
-        friend class SaveState;
-        
-        public:
-        void                        update();
-        void                        on_start();
-        void                        on_exit();
-    };
-
     // Make code look cleaner
     typedef shared_ptr<IGameState> StatePtr;
 }

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Entity.h"
-#include <string>
 #include "../Game.h"
 
 using namespace std;
@@ -31,10 +29,14 @@ namespace Engine
         float                       c_walkspeed;
     public:
         Character();
-        ~Character();
+        ~Character(){on_exit();}
         void                        add_character();
         void                        update();
         void                        on_start(const StatePtr& state);
         void                        on_exit();
     };
+    
+    typedef shared_ptr<Character> CharPtr;
+    
+    CharPtr create_character();
 }

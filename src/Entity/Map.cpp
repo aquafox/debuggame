@@ -56,7 +56,7 @@ Map::Map()
     m_type="map";
 }
 
-MapPtr Engine::make_map(const string& tmxfile)
+MapPtr Engine::create_map(const string& tmxfile)
 {
     MapPtr creation;
     if(tmxfile=="")
