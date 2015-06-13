@@ -25,7 +25,10 @@ SOFTWARE.
 #pragma once
 
 #include "../Game.h"
+#include "Tile.h"
 #include "tmxparser/Tmx.h"
+
+using namespace std;
 
 typedef shared_ptr<Tmx::Map> TmxMapPtr;
 
@@ -78,19 +81,20 @@ namespace Engine
     */
     class Map : public IEntity
     {
+    protected:
+        //Members
         Ness::Sizei                 m_dimensions=Ness::Sizei(100,100);
         Ness::Sizei                 m_tilesize=Ness::Sizei(128,75);
         Ness::Pointi                m_sheetgrid=Ness::Pointi(2,4);
         string                      m_spritesheet="resources/gfx/tilemap.png";
         Ness::IsoTileMapPtr         m_tilemap;
         TmxMapPtr                   m_tmx;
-
-        Ness::ZNodePtr              m_scene;
+        vector<TilePtr>             m_tilelayer[32];
 
     public:
         Map();
         ~Map(){on_exit();}
-        Map(string tmxfile);
+        Map(const string& tmxfile);
         void                        on_start(const StatePtr& state);
         void                        on_exit();
         void                        update();

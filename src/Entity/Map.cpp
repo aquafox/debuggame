@@ -33,7 +33,7 @@ SOFTWARE.
 using namespace std;
 using namespace Engine;
 
-Map::Map(string tmxfile)
+Map::Map(const string& tmxfile)
 {
     m_type="map";
     // Load tmx file
@@ -43,13 +43,14 @@ Map::Map(string tmxfile)
 
     // Error checking.
     if (m_tmx->HasError())
-        cerr << "Map " << m_gid << ":" << tmxfile << " error:" << endl << m_tmx->GetErrorCode() << ":" << m_tmx->GetErrorText() << endl;
+        cerr << m_gid << ":" << m_type << ":tmx=" << tmxfile << ":" << endl << m_tmx->GetErrorCode() << ":" << m_tmx->GetErrorText() << endl;
 
     m_dimensions = Ness::Sizei(m_tmx->GetWidth(),m_tmx->GetHeight());
     m_tilesize = Ness::Sizei(m_tmx->GetTileWidth(),m_tmx->GetTileHeight());
 
     const Tmx::Tileset* tileset = m_tmx->GetTileset(0);
     m_spritesheet = tileset->GetImage()->GetSource();
+    cout << "Loading Spritesheet:" << m_spritesheet << endl;
     m_sheetgrid = Ness::Pointi(tileset->GetImage()->GetWidth()/m_tmx->GetTileWidth(),tileset->GetImage()->GetHeight()/m_tmx->GetTileHeight());
 }
 
