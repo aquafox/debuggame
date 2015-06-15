@@ -7,6 +7,8 @@ Used this [tutorial](http://gamedevelopment.tutsplus.com/articles/how-to-build-a
 ###Maps
 Maps are made using [Tiled](http://www.mapeditor.org/). Support for tmx is being coded, [tmxparser](https://github.com/andrewrk/tmxparser) is the library being used. Support for encrypted tmx files too.
 
+##Music
+Found some great [CC licensed music](https://soundcloud.com/sparling-soundworks).
 
 ## Dependencies
 ### Local Dependencies
