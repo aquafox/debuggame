@@ -26,7 +26,6 @@ SOFTWARE.
 
 #include "../NessEngine/NessEngine.h"
 
-#include <vector>
 #include <memory>
 
 using namespace std;
@@ -35,9 +34,6 @@ namespace Engine
 {
     // Abstract base class for game states.
     // States are to be added to the stack Game::m_statestack.
-    
-    //Forward declarations
-    class Game;
 
     class IGameState : public enable_shared_from_this<IGameState>
     {

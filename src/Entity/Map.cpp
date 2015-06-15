@@ -52,7 +52,7 @@ Map::Map(const string& tmxfile)
     const Tmx::Tileset* tileset = m_tmx->GetTileset(0);
     m_spritesheet = tileset->GetImage()->GetSource();
     cout << "Loading Spritesheet:" << m_spritesheet << endl;
-    m_sheetgrid = Ness::Pointi(tileset->GetImage()->GetWidth()/m_tmx->GetTileWidth(),tileset->GetImage()->GetHeight()/m_tmx->GetTileHeight());
+    m_sheet_grid = Ness::Pointi(tileset->GetImage()->GetWidth()/m_tmx->GetTileWidth(),tileset->GetImage()->GetHeight()/m_tmx->GetTileHeight());
     /* MOVE THIS TO ON_START()
     const Tmx::TileLayer* tilelayer = m_tmx->GetTileLayer(0);
     for (int y = 0; y < tilelayer->GetHeight(); ++y)
@@ -105,7 +105,7 @@ void Map::on_start(const StatePtr& state)
     Ness::Renderer* renderer = Game::instance().renderer();
     m_tilemap = make_shared<IsoTileMap>(renderer, m_spritesheet, m_dimensions, m_tilesize);
     state->znode()->add(m_tilemap);
-    m_tilemap->set_all_tiles_type(Ness::Pointi(0, 0), m_sheetgrid);
+    m_tilemap->set_all_tiles_type(Ness::Pointi(0, 0), m_sheet_grid);
 
     //const Tmx::TileLayer *layer = m_tmx->GetTileLayer(0);
 
@@ -125,14 +125,4 @@ void Map::update()
 Map::Map()
 {
     m_type="map";
-}
-
-MapPtr Engine::create_map(const string& tmxfile)
-{
-    MapPtr creation;
-    if(tmxfile=="")
-        creation = make_shared<Map>();
-    else
-        creation = make_shared<Map>(tmxfile);
-    return creation;
 }

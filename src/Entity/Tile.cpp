@@ -42,6 +42,22 @@ void Tile::on_start(const StatePtr& state)
 void Tile::update() {}
 void Tile::on_exit() {}
 
+void Tile::change_sprite(const Ness::Pointi& sheet_position)
+{
+    m_sheet_position = sheet_position;
+    if (m_sprite)
+    {
+        if (auto map = m_map.lock())
+            m_sprite->set_source_from_sprite_sheet(sheet_position,map->sheet_grid());
+        else
+            error("Can't change sprite because no map has been assigned yet.");
+    }
+    else
+    {
+        error("Can't change sprite because no sprite has been assigned yet.");
+    }
+}
+
 TilePtr Engine::create_tile(const MapPtr& map, const Ness::Pointi& grid_position)
 {
     auto creation = make_shared<Tile>(map,grid_position);

@@ -25,6 +25,7 @@ SOFTWARE.
 #include "../Game.h"
 #include "LocalMap.h"
 #include "../Entity/Character.h"
+#include "../Entity/Map.h"
 
 using namespace Engine;
 using namespace std;

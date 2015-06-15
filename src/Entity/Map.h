@@ -86,7 +86,7 @@ namespace Engine
         //Members
         Ness::Sizei                 m_dimensions=Ness::Sizei(100,100);
         Ness::Sizei                 m_tilesize=Ness::Sizei(128,75);
-        Ness::Pointi                m_sheetgrid=Ness::Pointi(2,4);
+        Ness::Pointi                m_sheet_grid=Ness::Pointi(2,4);
         string                      m_spritesheet="resources/gfx/tilemap.png";
         Ness::IsoTileMapPtr         m_tilemap;
         vector<TilePtr>             m_tilelayer[32];
@@ -104,11 +104,21 @@ namespace Engine
         void                        update();
         
         const Ness::IsoTileMapPtr& tilemap() { return m_tilemap; }
+        const Ness::Pointi& sheet_grid() { return m_sheet_grid; }
 
     };
 
     typedef shared_ptr<Map>      MapPtr;
 
-    MapPtr create_map(const string& tmxfile=string(""));
+    //Factory
+    inline const MapPtr create_map(const string& tmxfile=string(""))
+    {
+        MapPtr creation;
+        if(tmxfile=="")
+            creation = make_shared<Map>();
+        else
+            creation = make_shared<Map>(tmxfile);
+        return creation;
+    }
 }
 

@@ -65,9 +65,3 @@ void Character::on_exit()
     m_scene.reset();
     m_sprite.reset();
 }
-
-CharPtr Engine::create_character()
-{
-    auto creation = make_shared<Character>();
-    return creation;
-}

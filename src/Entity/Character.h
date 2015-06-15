@@ -62,5 +62,10 @@ namespace Engine
     
     typedef shared_ptr<Character> CharPtr;
     
-    CharPtr create_character();
+    //Factory
+    inline const CharPtr create_character()
+    {
+        auto    creation = make_shared<Character>();
+        return creation;
+    }
 }

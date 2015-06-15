@@ -25,8 +25,6 @@ SOFTWARE.
 #pragma once
 
 #include "../Game.h"
-#include "../Entity/Map.h"
-#include "../Entity/Character.h"
 
 using namespace std;
 

@@ -25,7 +25,6 @@ SOFTWARE.
 #pragma once 
 
 #include "../Game.h"
-#include "Character.h"
 
 namespace Engine
 {
@@ -47,13 +46,22 @@ namespace Engine
         Tile(const MapPtr& map, const Ness::Pointi& grid_position = Ness::Pointi(0,0));
         ~Tile() { on_exit(); }
         
+        //Inherited functions
         void on_exit();
         void on_start(const StatePtr& state);
         void update();
+        
+        //Member functions
+        void change_sprite(const Ness::Pointi& sheet_position);
+        bool is_walkable() { return m_walkable; }
+        void walkable(const bool& walk = true) { m_walkable = walk; }
+        bool is_occupied();
+        void occupied_by(const CharPtr& character);
+        //const MapPtr& map() { return m_map.lock(); }//uncertain if this should exist
     };
     
     //Types
     typedef shared_ptr<Tile> TilePtr;
-    
+    //Factory function
     TilePtr create_tile(const MapPtr& map, const Ness::Pointi& grid_position = Ness::Pointi(0,0));
 }

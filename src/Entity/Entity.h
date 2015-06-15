@@ -26,6 +26,7 @@ SOFTWARE.
 
 #include "../States/State.h"
 
+#include <iostream>
 #include <string>
 #include <memory>
 
@@ -37,7 +38,6 @@ namespace Engine
     {
     protected:
         unsigned short          m_gid;      //Unique GlobalID
-        string                  m_id;       //Name of the entity
         string                  m_type;     //Type of entity eg "character"
 
         static unsigned short   next_gid;
@@ -48,11 +48,13 @@ namespace Engine
         
         const unsigned int  gid() {return m_gid;}
         const string        type() {return m_type;}
-        const string        id() {return m_id;}
 
         virtual void        on_start(const StatePtr& state)=0;
         virtual void        on_exit()=0;
         virtual void        update()=0;
+        
+        inline void         error(const string& message) { cerr << m_gid << ":" << m_type << ":" << "Error:" << message << endl; }
+        inline void         warning(const string& message) { cerr << m_gid << ":" << m_type << ":" << "Warning:" << message << endl; }
     };
 }
 

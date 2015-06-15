@@ -28,6 +28,7 @@ SOFTWARE.
 #include "States/State.h"
 #include "Entity/Entity.h"
 
+#include <iostream>
 #include <vector>
 #include <string>
 #include <memory>
@@ -38,6 +39,7 @@ using namespace std;
 
 namespace Engine
 {
+    //Singleton class the game
     class Game
     {
         Game();
@@ -54,5 +56,16 @@ namespace Engine
         Ness::Renderer*             renderer();
         StatePtr                    top_state();
     };
+    
+    //Entity Types
+    class Map;
+    typedef shared_ptr<Map> MapPtr;
+    class Tile;
+    typedef shared_ptr<Tile> TilePtr;
+    class Character;
+    typedef shared_ptr<Character> CharPtr;
+    
+    //GameState Types
+    class LocalMapState;
 }
 

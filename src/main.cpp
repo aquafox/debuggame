@@ -24,11 +24,9 @@ SOFTWARE.
 
 #include <iostream>
 #include <string>
-#include "NessEngine/NessEngine.h"
 
 #include "Game.h"
-#include "Entity/Entity.h"
-#include "Entity/Character.h"
+
 #include "States/LocalMap.h"
 
 using namespace std;
