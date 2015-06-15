@@ -48,10 +48,56 @@ Map::Map(const string& tmxfile)
     m_dimensions = Ness::Sizei(m_tmx->GetWidth(),m_tmx->GetHeight());
     m_tilesize = Ness::Sizei(m_tmx->GetTileWidth(),m_tmx->GetTileHeight());
 
+    // Get spritesheet from tmx file
     const Tmx::Tileset* tileset = m_tmx->GetTileset(0);
     m_spritesheet = tileset->GetImage()->GetSource();
     cout << "Loading Spritesheet:" << m_spritesheet << endl;
     m_sheetgrid = Ness::Pointi(tileset->GetImage()->GetWidth()/m_tmx->GetTileWidth(),tileset->GetImage()->GetHeight()/m_tmx->GetTileHeight());
+    /* MOVE THIS TO ON_START()
+    const Tmx::TileLayer* tilelayer = m_tmx->GetTileLayer(0);
+    for (int y = 0; y < tilelayer->GetHeight(); ++y)
+    {
+        for (int x = 0; x < tileLayer->GetWidth(); ++x)
+        {
+            if (tileLayer->GetTileTilesetIndex(x, y) == -1)
+            {
+                cout << "-1 index occured?" << endl;
+            }
+            else
+            {
+                // Get the tile's id and gid.
+                tileLayer->GetTileId(x, y), tileLayer->GetTileGid(x, y));
+                
+                    // Find a tileset for that id.
+                    //const Tmx::Tileset *tileset = map->FindTileset(layer->GetTileId(x, y));
+                    if (tileLayer->IsTileFlippedHorizontally(x, y))
+                    {
+                        printf("h");
+                    }
+                    else
+                    {
+                        printf(" ");
+                    }
+                    if (tileLayer->IsTileFlippedVertically(x, y))
+                    {
+                        printf("v");
+                    }
+                    else
+                    {
+                        printf(" ");
+                    }
+                    if (tileLayer->IsTileFlippedDiagonally(x, y))
+                    {
+                        printf("d ");
+                    }
+                    else
+                    {
+                        printf("  ");
+                    }
+                }
+            }
+            */
+
 }
 
 void Map::on_start(const StatePtr& state)

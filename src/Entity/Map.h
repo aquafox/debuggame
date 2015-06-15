@@ -81,6 +81,7 @@ namespace Engine
     */
     class Map : public IEntity
     {
+        friend class Tile;
     protected:
         //Members
         Ness::Sizei                 m_dimensions=Ness::Sizei(100,100);
@@ -88,8 +89,11 @@ namespace Engine
         Ness::Pointi                m_sheetgrid=Ness::Pointi(2,4);
         string                      m_spritesheet="resources/gfx/tilemap.png";
         Ness::IsoTileMapPtr         m_tilemap;
-        TmxMapPtr                   m_tmx;
         vector<TilePtr>             m_tilelayer[32];
+        
+        //tmx members
+        TmxMapPtr                   m_tmx;
+        unsigned int                m_tmx_first_gid;
 
     public:
         Map();
@@ -98,6 +102,8 @@ namespace Engine
         void                        on_start(const StatePtr& state);
         void                        on_exit();
         void                        update();
+        
+        const Ness::IsoTileMapPtr& tilemap() { return m_tilemap; }
 
     };
 

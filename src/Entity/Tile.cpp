@@ -23,6 +23,7 @@ SOFTWARE.
 */
 
 #include "Tile.h"
+#include "Map.h"
 
 using namespace Engine;
 using namespace std;
@@ -31,6 +32,7 @@ Tile::Tile(const MapPtr& map, const Ness::Pointi& grid_position)
 {
     m_map = map;
     m_grid_position = grid_position;
+    m_sprite = map->tilemap()->get_sprite(m_grid_position);
 }
 
 void Tile::on_start(const StatePtr& state)
@@ -39,3 +41,9 @@ void Tile::on_start(const StatePtr& state)
 
 void Tile::update() {}
 void Tile::on_exit() {}
+
+TilePtr Engine::create_tile(const MapPtr& map, const Ness::Pointi& grid_position)
+{
+    auto creation = make_shared<Tile>(map,grid_position);
+    return creation;
+}
