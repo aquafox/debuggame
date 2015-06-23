@@ -42,7 +42,7 @@ void Tile::on_start(const StatePtr& state)
 void Tile::update() {}
 void Tile::on_exit() {}
 
-void Tile::change_sprite(const Ness::Pointi& sheet_position)
+void Tile::change_sprite_to(const Ness::Pointi& sheet_position)
 {
     m_sheet_position = sheet_position;
     if (m_sprite)

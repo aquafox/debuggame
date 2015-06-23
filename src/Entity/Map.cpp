@@ -43,7 +43,7 @@ Map::Map(const string& tmxfile)
 
     // Error checking.
     if (m_tmx->HasError())
-        cerr << m_gid << ":" << m_type << ":tmx=" << tmxfile << ":" << endl << m_tmx->GetErrorCode() << ":" << m_tmx->GetErrorText() << endl;
+        error(string("tmx=" + tmxfile + ":" + string(reinterpret_cast<char*>(m_tmx->GetErrorCode())) + ":" + m_tmx->GetErrorText()));
 
     m_dimensions = Ness::Sizei(m_tmx->GetWidth(),m_tmx->GetHeight());
     m_tilesize = Ness::Sizei(m_tmx->GetTileWidth(),m_tmx->GetTileHeight());

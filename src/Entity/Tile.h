@@ -52,7 +52,7 @@ namespace Engine
         void update();
         
         //Member functions
-        void change_sprite(const Ness::Pointi& sheet_position);
+        void change_sprite_to(const Ness::Pointi& sheet_position);
         bool is_walkable() { return m_walkable; }
         void walkable(const bool& walk = true) { m_walkable = walk; }
         bool is_occupied();

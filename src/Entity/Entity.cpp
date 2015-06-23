@@ -26,5 +26,5 @@ SOFTWARE.
 
 using namespace Engine;
 
-unsigned short IEntity::next_gid=0;
+unsigned short IEntity::next_id=0;
 

@@ -37,24 +37,24 @@ namespace Engine
     class IEntity : public enable_shared_from_this<IEntity>
     {
     protected:
-        unsigned short          m_gid;      //Unique GlobalID
+        unsigned short          m_id;      //Unique GlobalID
         string                  m_type;     //Type of entity eg "character"
 
-        static unsigned short   next_gid;
+        static unsigned short   next_id;
 
     public:
-        IEntity(){next_gid++; m_gid=next_gid;} //Automatically set GlobalID
+        IEntity(){next_id++; m_id=next_id;} //Automatically set GlobalID
         virtual ~IEntity(){} //Destructors are defined by inherited
         
-        const unsigned int  gid() {return m_gid;}
+        const unsigned int  id() {return m_id;}
         const string        type() {return m_type;}
 
         virtual void        on_start(const StatePtr& state)=0;
         virtual void        on_exit()=0;
         virtual void        update()=0;
         
-        inline void         error(const string& message) { cerr << m_gid << ":" << m_type << ":" << "Error:" << message << endl; }
-        inline void         warning(const string& message) { cerr << m_gid << ":" << m_type << ":" << "Warning:" << message << endl; }
+        inline void         error(const string& message) { cerr << m_id << ":" << m_type << ":" << "Error:" << message << endl; }
+        inline void         warning(const string& message) { cerr << m_id << ":" << m_type << ":" << "Warning:" << message << endl; }
     };
 }
 
